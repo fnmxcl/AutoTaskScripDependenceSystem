@@ -1,0 +1,35 @@
+[
+    {
+        "AutoServiceKey":"TestExtersion",
+        "ScriptName":"TestExtersion.js",
+        "ExecuteMode":"Script",
+        "TimePatterns":"0 */1 * * * *",
+        "Export":"Start",
+        "Export_Params":{"name":"Yangliu"},
+        "Discription":"基本的测试扩展脚本。",
+        "Dependencies":[]
+    },
+    {
+        "AutoServiceKey":"TestExtersion3",
+        "ScriptName":"TestExtersion3.js",
+        "ExecuteMode":"Script",
+        "Export":"Start",
+        "TimePatterns":"0 */1 * * * *",
+        "Export_Params":{},
+        "Discription":"基本的测试扩展脚本3。",
+        "Dependencies":[
+            {"AutoServiceKey":"TestExtersion","SuccessCondition":"if((typeof $ScriptResult) == 'object'&&  JSON.parse($ScriptResult.body).Status == 'OK'){return true;}else{return false;} "},
+            {"AutoServiceKey":"TestExtersion2","SuccessCondition":"var name='物产中拓股份有限公司';if ($ScriptResult.indexOf(name)>=0){return true;}else{return false;}"}
+        ]
+    },
+    {
+        "AutoServiceKey":"TestExtersion2",
+        "ScriptName":"TestExtersion2.js",
+        "ExecuteMode":"Script",
+        "Export":"ScriptMain",
+        "Export_Params":{},
+        "Discription":"基本的测试扩展脚本2。",
+        "Dependencies":[{"AutoServiceKey":"TestExtersion","SuccessCondition":"if((typeof $ScriptResult) == 'object'&&  JSON.parse($ScriptResult.body).Status == 'OK'){return true;}else{return false;} "}]
+    }
+]
+

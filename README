@@ -1,0 +1,60 @@
+    //
+    ////外部的脚本必须放置在AutoServices/Extersions文件夹中并把ScriptName参数设置为你的外部脚本的名字。
+    //var extersionJsonData = [
+    //        {
+    //            "AutoServiceKey":"TestExtersion",
+    //            "ScriptName":"TestExtersion.js",
+    //            "ExecuteMode":"Script",
+    //            "TimePatterns":"0 */1 * * * *",
+    //            "Export":"Start",
+    //            "Export_Params":{"name":"Yangliu"},
+    //            "Discription":"基本的测试扩展脚本。",
+    //            "Dependencies":[]
+    //        },
+    //        {
+    //            "AutoServiceKey":"TestExtersion3",
+    //            "ScriptName":"TestExtersion3.js",
+    //            "ExecuteMode":"Script",
+    //            "Export":"Start",
+    //            "TimePatterns":"0 */1 * * * *",
+    //            "Export_Params":{},
+    //            "Discription":"基本的测试扩展脚本3。",
+    //            "Dependencies":[
+                    ////TODO:若autoService.OnAutoServiceCosoleCallBack  有对应的实现代码则以代码返回true和false为准，否则以配置中的SuccessCondition
+    //                {"AutoServiceKey":"TestExtersion","SuccessCondition":"if((typeof $ScriptResult) == 'object'&&  JSON.parse($ScriptResult.body).Status == 'OK'){return true;}else{return false;} "},
+    //                {"AutoServiceKey":"TestExtersion2","SuccessCondition":"var name='物产中拓股份有限公司';if ($ScriptResult.indexOf(name)>=0){return true;}else{return false;}"}
+    //            ]
+    //        },
+    //        {
+    //            "AutoServiceKey":"TestExtersion2",
+    //            "ScriptName":"TestExtersion2.js",
+    //            "ExecuteMode":"Script",
+    //            "Export":"ScriptMain",
+    //            "Export_Params":{},
+    //            "Discription":"基本的测试扩展脚本2。",
+    //            "Dependencies":[{"AutoServiceKey":"TestExtersion","SuccessCondition":"if((typeof $ScriptResult) == 'object'&&  JSON.parse($ScriptResult.body).Status == 'OK'){return true;}else{return false;} "}]
+    //        }
+    //    ]
+    //    ;
+    ////构造自动任务插件系统。 此对象包含两个回调函数引用（  OnScriptExecuteResultLogCallBack(taskConfig,taskResult) 和 OnAutoServiceCosoleCallBack(logContent)
+    //var autoService = new AutoServiceStartup();
+    ////TODO:如果不赋值此函数则系统以默认的方式运行 , onAutoServiceLogCallBack(taskConfig,taskResult) 是一个函数回调, 参数: taskConfig:此参数为执行完的脚本任务对象。taskResult：此参数为执行完的脚本任务的结果
+    //autoService.OnScriptExecuteResultLogCallBack = function(taskConfig:ITask,taskResult:TaskResult){
+    //    try{
+    //        console.log("当前OnScriptExecuteResultLogCallBack以传入参数方式调用自动任务系统:执行脚本的名字为:"+taskConfig.AutoServiceKey +",执行结果为:"+ (JSON.stringify(taskResult.Result).substring(0,100) + "..."));
+    //    }catch(exception){
+    //        console.log("ERROR:OnScriptExecuteResultLogCallback:"+exception);
+    //    }
+    //
+    //};
+    ////TODO:如果不赋值此函数则系统以默认的方式运行 ,OnAutoServiceCosoleCallBack(logContent) 是一个函数回调, 参数: logContent:自动任务运行的控制台信息。
+    //autoService.OnAutoServiceCosoleCallBack = function(logContent:string){
+    //    console.log("当前OnAutoServiceCosoleCallBack以传入参数方式调用自动任务系统:系统运行日志:"+logContent);
+    //};
+    ////extersionJsonData  是一个配置参数数据, 参考目录AutoServices/Configuration/ExtersionsConfig.json 配置数据文件。
+    //autoService.Startup(extersionJsonData);
+
+////TODO:如果不负赋值则 以Dependencies中的SuccessCondition为准, OnDependenciesConditionCallBack(currentAutoServiceKey,taskConfig,taskResult) 是一个函数回调, 参数: taskConfig:此参数为执行完的脚本任务对象。taskResult：此参数为执行完的脚本任务的结果，务必返回 true 或 false;
+  //autoService.OnDependenciesConditionCallBack = function(currentAutoServiceKey,taskConfig,taskResult){
+    //               return true;
+      //          }
